@@ -37,7 +37,7 @@ public class ComicDTO implements Serializable {
 	 * Constructor de la clase.
 	 */
 	public ComicDTO() {
-		//Comstructor vacío
+		//Constructor vacío
 	}
 	
 
