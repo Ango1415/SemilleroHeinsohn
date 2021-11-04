@@ -1,55 +1,42 @@
-/**
- * TematicaEnum.java
- */
 package com.hbt.semillero.enums;
 
 /**
- * <b>Descripción:<b> Clase que determina la enumeracion para representar los
- * tipos de tematica aceptados por un comic
  * 
- * @author ccastano
- * @version
+ * <b>Descripción:</b> Clase que determina la enumeracion para representar los tipos de tematica aceptados por un comic
+ * <b>Caso de Uso:</b> SEMILLERO 2021
+ * @author ANGEL GOMEZ
+ * @version 1.0
  */
 public enum TematicaEnum {
-
-	AVENTURAS("enum.tematica.aventuras"), 
+	
+	AVENTURAS("enum.tematica.aventuras"), //El valor de la descrp lo dejamos así porque es un ejemplo de como se usan en listas despregables en el front, a esto se le llama internazionalizacion
 	BELICO("enum.tematica.belico"),
 	HUMORISTICO("enum.tematica.humoristico"),
-	DEPORTIVO("enum.tematica.deportivo"), 
-	FANTASTICO("enum.tematica.fantastico"),  
-	CIENCIA_FICCION("enum.tematica.cienciaficcion"),  
-	HISTORICO("enum.tematica.historico"),  
-	HORROR("enum.tematica.horror");
+	DEPORTIVO("enum.tematica.deportivo"),
+	FANTASTICO("enum.tematica.fantastico"),
+	CIENCIA_FICCION("enum.tematica.cienciaFiccion"),
+	HISTORICO("enum.tematica.historico"),
+	HORROR("enum.tematica.horror")
+	;
+	
+	private String descipcion;
+	
 	
 	/**
-	 * Atributo que contiene la clave del mensaje para la internacionalizacion
-	 */
-	private String codigoMensaje;
-
-	/**
-	 * Constructor que recibe como parametro el codigo del mensaje
 	 * 
-	 * @param codigoMensaje, Clave del mensaje para para internacionalizacion
+	 * Constructor de la clase enumerador.
+	 * @param descripcion
 	 */
-	TematicaEnum(String codigoMensaje) {
-		this.codigoMensaje = codigoMensaje;
+	TematicaEnum(String descripcion){
+		this.descipcion=descripcion;
 	}
 
 	/**
-	 * Metodo que retorna el valor del atributo
-	 * 
-	 * @return cadena con el codigo del mensaje
+	 * Metodo encargado de retornar el valor del atributo descipcion
+	 * @return El descipcion asociado a la clase
 	 */
-	public String getCodigoMensaje() {
-		return codigoMensaje;
+	public String getDescipcion() {
+		return descipcion;
 	}
 
-	/**
-	 * Metodo que establece el valor del atributo
-	 *
-	 * @param codigoMensaje
-	 */
-	public void setCodigoMensaje(String codigoMensaje) {
-		this.codigoMensaje = codigoMensaje;
-	}
 }

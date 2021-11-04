@@ -3,9 +3,9 @@ package com.hbt.semillero.enums;
 /**
  * <b>Descripción:<b> Clase que determina la enumeracion para representar los
  * estados aceptados en un comic
- * 
- * @author ccastano
- * @v
+ * <b>Caso de Uso:</b> SEMILLERO 2021
+ * @author ANGEL GOMEZ
+ * @version 1.0
  */
 public enum EstadoEnum {
 	
@@ -29,24 +29,9 @@ public enum EstadoEnum {
 	/**
 	 * 
 	 * Metodo encargado de obtener un valor
-	 * <b>Caso de Uso</b>
-	 * @author angel
-	 * 
-	 * @return
+	 * @return codigoMensaje asociado a la clase
 	 */
 	public String getCodigoMensaje() {
 		return codigoMensaje;
-	}
-
-	/**
-	 * 
-	 * Metodo encargado de establecer un valor
-	 * <b>Caso de Uso</b>
-	 * @author angel
-	 * 
-	 * @param codigoMensaje
-	 */
-	public void setCodigoMensaje(String codigoMensaje) {
-		this.codigoMensaje = codigoMensaje;
 	}
 }
