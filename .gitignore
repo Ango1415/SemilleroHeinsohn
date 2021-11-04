@@ -1,0 +1,5 @@
+#Ignorar las carpetas diferentes a semillero-padre
+/.metadata/
+/.settings/
+.project
+pom.xml
