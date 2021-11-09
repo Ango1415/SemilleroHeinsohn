@@ -1,6 +1,7 @@
 package semillero.pruebasUnitarias;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.apache.log4j.BasicConfigurator;
@@ -62,17 +63,18 @@ public class CreacionComicTest {
 		ArrayList<ComicDTO> listaComics = new ArrayList<ComicDTO>();
 
 		//ComicDTO Comic1 = new ComicDTO("01", "Superman", "DC", TematicaEnum.AVENTURAS, "Nueva", Integer.valueOf(100), BigDecimal.valueOf(50000), "Jerry Siegel", true, EstadoEnum.ACTIVO, Long.valueOf(20L));
-		listaComics.add(new ComicDTO("01", "Superman", "DC", TematicaEnum.AVENTURAS, "Nueva", Integer.valueOf(100), BigDecimal.valueOf(50000), "Jerry Siegel", true, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("02", "Batman", "DC", TematicaEnum.BELICO, "Nueva", Integer.valueOf(110), BigDecimal.valueOf(51000), "Pedro", false, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("03", "Aquaman", "DC", TematicaEnum.HUMORISTICO, "Nueva", Integer.valueOf(120), BigDecimal.valueOf(52000), "Pablo", true, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("03", "Aquaman", "DC", TematicaEnum.HUMORISTICO, "Nueva", Integer.valueOf(120), BigDecimal.valueOf(52000), "Pablo", true, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("04", "WonderWoman", "DC", TematicaEnum.DEPORTIVO, "Nueva", Integer.valueOf(130), BigDecimal.valueOf(53000), "Lucas", false, EstadoEnum.INACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("05", "Flash", "DC", TematicaEnum.FANTASTICO, "Nueva", Integer.valueOf(140), BigDecimal.valueOf(54000), "Henry", false, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("06", "Iron Man", "Marvel", TematicaEnum.CIENCIA_FICCION, "Nueva", Integer.valueOf(150), BigDecimal.valueOf(55000), "Ana", true, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("07", "Cap America", "Marvel", TematicaEnum.HISTORICO, "Nueva", Integer.valueOf(160), BigDecimal.valueOf(56000), "Teresa", false, EstadoEnum.INACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("08", "Hulk", "Marvel", TematicaEnum.HORROR, "Nueva", Integer.valueOf(170), BigDecimal.valueOf(57000), "Elvira", false, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("09", "Thor", "Marvel", TematicaEnum.AVENTURAS, "Nueva", Integer.valueOf(180), BigDecimal.valueOf(58000), "Julieta", true, EstadoEnum.ACTIVO, Long.valueOf(20L)));
-		listaComics.add(new ComicDTO("10", "Viuda Negra", "Marvel", TematicaEnum.BELICO, "Nueva", Integer.valueOf(190), BigDecimal.valueOf(59000), "Maradona", false, EstadoEnum.INACTIVO, Long.valueOf(20L)));
+		listaComics.add(new ComicDTO(0L, "Superman", "DC", TematicaEnum.AVENTURAS, "Nueva", Integer.valueOf(100), BigDecimal.valueOf(5000), "Jerry Siegel", true, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(100)));
+		listaComics.add(new ComicDTO(1L, "Superman", "DC", TematicaEnum.AVENTURAS, "Nueva", Integer.valueOf(100), BigDecimal.valueOf(5000), "Jerry Siegel", true, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(200)));
+		listaComics.add(new ComicDTO(2L, "Batman", "DC", TematicaEnum.BELICO, "Nueva", Integer.valueOf(110), BigDecimal.valueOf(5100), "Pedro", false, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(300)));
+		listaComics.add(new ComicDTO(3L, "Aquaman", "DC", TematicaEnum.HUMORISTICO, "Nueva", Integer.valueOf(120), BigDecimal.valueOf(5200), "Pablo", true, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(400)));
+		listaComics.add(new ComicDTO(4L, "Aquaman", "DC", TematicaEnum.HUMORISTICO, "Nueva", Integer.valueOf(120), BigDecimal.valueOf(5200), "Pablo", true, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(500)));
+		listaComics.add(new ComicDTO(5L, "WonderWoman", "DC", TematicaEnum.DEPORTIVO, "Nueva", Integer.valueOf(130), BigDecimal.valueOf(5300), "Lucas", false, LocalDate.now(), EstadoEnum.INACTIVO, Integer.valueOf(600)));
+		listaComics.add(new ComicDTO(6L, "Flash", "DC", TematicaEnum.FANTASTICO, "Nueva", Integer.valueOf(140), BigDecimal.valueOf(5400), "Henry", false, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(700)));
+		listaComics.add(new ComicDTO(7L, "Iron Man", "Marvel", TematicaEnum.CIENCIA_FICCION, "Nueva", Integer.valueOf(150), BigDecimal.valueOf(5500), "Ana", true, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(800)));
+		listaComics.add(new ComicDTO(8L, "Cap America", "Marvel", TematicaEnum.HISTORICO, "Nueva", Integer.valueOf(160), BigDecimal.valueOf(5600), "Teresa", false, LocalDate.now(), EstadoEnum.INACTIVO, Integer.valueOf(100)));
+		listaComics.add(new ComicDTO(9L, "Hulk", "Marvel", TematicaEnum.HORROR, "Nueva", Integer.valueOf(170), BigDecimal.valueOf(5700), "Elvira", false, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(200)));
+		listaComics.add(new ComicDTO(10L, "Thor", "Marvel", TematicaEnum.AVENTURAS, "Nueva", Integer.valueOf(180), BigDecimal.valueOf(5800), "Julieta", true, LocalDate.now(), EstadoEnum.ACTIVO, Integer.valueOf(300)));
+		listaComics.add(new ComicDTO(11L, "Viuda Negra", "Marvel", TematicaEnum.BELICO, "Nueva", Integer.valueOf(190), BigDecimal.valueOf(5900), "Maradona", false, LocalDate.now(), EstadoEnum.INACTIVO, Integer.valueOf(400)));
 		
 		try {
 			
@@ -106,7 +108,7 @@ public class CreacionComicTest {
 		for (ComicDTO comic: listaComics) {
 			if(comic.getEstadoEnum().equals(EstadoEnum.ACTIVO)) { //Comparamos con el enumerador
 				Assert.assertEquals(comic.getEstadoEnum(), EstadoEnum.ACTIVO); //Prueba unitaria para verificar los comics activos
-				System.out.println(comic.toString()); //Imprimimos los datos del comic
+				System.out.println(comic.toString() + "\n"); //Imprimimos los datos del comic
 				comicsActivos.add(comic); //Añadimos a la lista de comics activos
 			}
 		}

@@ -14,10 +14,10 @@ import com.hbt.semillero.enums.TematicaEnum;
  * @author ANGEL GOMEZ
  * @version 1.0
  */
-public class ComicDTO implements Serializable { //Tanto la Entidad como el DTO implementan Serializable
+public class ComicDTO extends ResultadoDTO implements Serializable { //Tanto la Entidad como el DTO implementan Serializable
 	
 	/**
-	 * Atributo que determina  
+	 * Atributo que determina el serial con el que se identificara el DTO
 	 */
 	private static final long serialVersionUID = 1L; //Tanto la Entidad como el DTO implementan este atributo (por implementar Serializable)
 
@@ -82,8 +82,52 @@ public class ComicDTO implements Serializable { //Tanto la Entidad como el DTO i
 	private Integer cantidad;
 	
 	
+	/**
+	 * 
+	 * Constructor vacio de la clase.
+	 */
+	public ComicDTO () {
+		//Constructor vacío de la clase
+		super();
+	}
 	
 
+	/**
+	 * Constructor parametrizado de la clase.
+	 * @param id
+	 * @param nombre
+	 * @param editorial
+	 * @param tematicaEnum
+	 * @param coleccion
+	 * @param numeroPaginas
+	 * @param precio
+	 * @param autores
+	 * @param color
+	 * @param fechaVenta
+	 * @param estadoEnum
+	 * @param cantidad
+	 */
+	
+	public ComicDTO(Long id, String nombre, String editorial, TematicaEnum tematicaEnum, String coleccion,
+			Integer numeroPaginas, BigDecimal precio, String autores, Boolean color, LocalDate fechaVenta,
+			EstadoEnum estadoEnum, Integer cantidad) {
+		
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.editorial = editorial;
+		this.tematicaEnum = tematicaEnum;
+		this.coleccion = coleccion;
+		this.numeroPaginas = numeroPaginas;
+		this.precio = precio;
+		this.autores = autores;
+		this.color = color;
+		this.fechaVenta = fechaVenta;
+		this.estadoEnum = estadoEnum;
+		this.cantidad = cantidad;
+	}
+
+	
 	/**
 	 * Metodo encargado de retornar el valor del atributo id
 	 * @return El id asociado a la clase
@@ -274,5 +318,18 @@ public class ComicDTO implements Serializable { //Tanto la Entidad como el DTO i
 	 */
 	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
-	}	
+	}
+
+
+	/** 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ComicDTO [id=" + id + ", nombre=" + nombre + ", editorial=" + editorial + ", tematicaEnum="
+				+ tematicaEnum + ", coleccion=" + coleccion + ", numeroPaginas=" + numeroPaginas + ", precio=" + precio
+				+ ", autores=" + autores + ", color=" + color + ", fechaVenta=" + fechaVenta + ", estadoEnum="
+				+ estadoEnum + ", cantidad=" + cantidad + "]";
+	}
+	
 }

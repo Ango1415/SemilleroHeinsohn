@@ -304,4 +304,17 @@ public class Comic implements Serializable { //Tanto la Entidad como el DTO impl
 	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
 	}
+
+	/** 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Comic [id=" + id + ", nombre=" + nombre + ", editorial=" + editorial + ", tematicaEnum=" + tematicaEnum
+				+ ", coleccion=" + coleccion + ", numeroPaginas=" + numeroPaginas + ", precio=" + precio + ", autores="
+				+ autores + ", color=" + color + ", fechaVenta=" + fechaVenta + ", estadoEnum=" + estadoEnum
+				+ ", cantidad=" + cantidad + "]";
+	}
+	
+	
 }

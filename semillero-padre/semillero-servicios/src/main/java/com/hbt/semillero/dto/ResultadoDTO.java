@@ -3,7 +3,8 @@ package com.hbt.semillero.dto;
 import java.io.Serializable;
 
 /**
- * Indica el resultado de ejecución.
+ * Indica el resultado de ejecución. Si es exitosa o no muestra un mensaje para el cliente,
+ * la transaccion no es excitosa si generamos una excepción funcional. (p ejm hay un comic repetido)
  * 
  * @author Johnny Soto
  *
@@ -11,7 +12,7 @@ import java.io.Serializable;
 public class ResultadoDTO implements Serializable {
 
 	/**
-	 * Serial
+	 * Atributo que determina el serial con el que se identificara el DTO
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
@@ -23,6 +24,15 @@ public class ResultadoDTO implements Serializable {
 	 */
 	private String mensajeEjecucion;
 
+	
+	/**
+	 * 
+	 * Constructor de la clase., está vacío
+	 */
+	public ResultadoDTO() {
+		//Constructor vacío de la clase
+	}
+	
 	/**
 	 * Constructor de la clase.
 	 * 
