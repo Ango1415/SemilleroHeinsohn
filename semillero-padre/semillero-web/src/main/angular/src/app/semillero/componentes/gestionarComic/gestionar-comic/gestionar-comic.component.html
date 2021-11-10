@@ -1,0 +1,129 @@
+<div class="container">  <!--Emcierra una seccion de componentes html-->
+    <pre>{{ comicDTO | json }}</pre> <!--Genera un JSON, comicDTO debe ser una var en el .ts, imprimo todo lo que diligencío en mi formulario, para ver si todo está funcionando bien -->
+    <form>
+        <h1>Gestionar Comic</h1>  <!-- forma de hacerlo con interpolación <h1>Gestionar Comic</h1>, así no dejaríamos el código estático-->
+        <hr>
+
+        <!--ESTO ES UNA LINEA CON DOS COMPONENTES-->
+        <div class="row"> <!--Una fila contendrá una serie de componentes, por cada fila solo dos componentes-->  
+            <div class="col-6"> <!--Este div ira a la izquierda, el siguiente irá a la derecha, además el tamaño de mi componente ocupará 6 columnas (Por lo general son un total de 12 columnas las que tendremos allí)-->
+                <label for="nombreComic">Nombre</label> <!-- Es el nombre del campo que contendrá el componente input -->
+                <input type="text" class="form-control" id="nombreComic" name = "nombre"  maxlength="50" [(ngModel)]="comicDTO.nombre"> <!-- Tenga cuidado con los id de cada componente, es muy importante para poder controlarlos de forma remota (Selenium), no se deben repetir, input es para ingresar datos -->
+            </div>
+            <div class="col-6"> <!--Este irá a la derecha-->
+                <label for="editorialComic">Editorial</label>
+                <input type="text" class="form-control" id="editorialComic" name="editorial" [(ngModel)]="comicDTO.editorial">
+            </div>
+        </div>
+
+        <!--ESTO ES OTRA LINEA CON OTROS DOS COMPONENTES, en esta tendremos una lista desplegable-->
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="editorialComic">Tematica</label>
+                    <select class="form-control" id="tematica" name="tematica" [(ngModel)]="comicDTO.tematicaEnum">
+                        <option value="AVENTURAS">AVENTURAS</option>
+                        <option value="BELICO">BELICO</option>
+                        <option value="DEPORTIVO">DEPORTIVO</option>
+                        <option value="FANTASTICO">FANTASTICO</option>
+                        <option value="CIENCIA_FICCION">CIENCIA_FICCION</option>
+                        <option value="HISTORICO">HISTORICO</option>
+                        <option value="HORROR">HORROR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                    <label for="coleccion">Coleccion</label>
+                    <input type="text" class="form-control" id="coleccion" name="coleccion" [(ngModel)]="comicDTO.coleccion">
+            </div>
+        </div>
+
+        <!--ESTO ES UNA LINEA CON DOS COMPONENTES-->
+        <div class="row">
+            <div class="col-6">
+                <label for="numeroPaginas">Número paginas:</label>
+                <input type="number" class="form-control" id="numeroPaginas" name="numPaginas" [(ngModel)]="comicDTO.numeroPaginas">
+            </div>
+
+            <div class="col-6">
+                <label for="precio">Precio:</label>
+                <input type="number" class="form-control" id="precio" step=".01" name="precio" [(ngModel)]="comicDTO.precio"> <!--Ese step es una propiedad para manejo de decimales (en los proyectos el tratamiento de estos datos se hace con una directivas para evaluar el formato)-->
+            </div>
+        </div>
+
+        <!--ESTO ES UNA LINEA CON DOS COMPONENTES-->
+        <div class="row">
+            <div class="col-6">
+                <label for="autores">Autores:</label>
+                <textarea class="form-control" id="autores" rows="3" name="autores" [(ngModel)]="comicDTO.autores"></textarea>
+            </div>
+
+            <div class="col-6">
+                <label for="color">A color:</label>
+                <br>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name ="color" class="custom-control-input"
+                        value="true" [(ngModel)]="comicDTO.color">
+                    <label class="custom-control-label" for="customRadioInline1">Si</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name ="color" class="custom-control-input"
+                        value="false" [(ngModel)]="comicDTO.color">
+                    <label class="custom-control-label" for="customRadioInline2">No</label>
+                </div>
+            </div>
+        </div>
+
+        <br> <!--Me genera un espacio para que los elementos no me queden amontonados-->
+
+        <div class = "row">
+            <div class = "col-6">
+                <span></span> <!--Genera un espacio que puede ser ocupado por un icono o texto, en este caso no está ocupado por nada, lo hace así porque quiere tener el boton en el lado derecho de la fila-->
+            </div>
+            <div class = "col-6 text-right">
+                <button type="button" class="btn btn-primary" (click)="crearComic()">Crear/Editar</button> <!--Aquí hay un Event Binding (click)-->
+            </div>
+        </div>
+
+        <!--Implementacion de una tabla para mostrar los resultados-->
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tematica</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">A color</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--date:"MM/dd/yy"
+                        | uppercase-->
+                        <tr *ngFor="let comic of listaComics;let i=index;"> <!--Recorre una lista item por item para imprimirla-->
+                            <!--ESTO ES UNICAMENTE PARA EL PRIMER ITEM DE LA TABLA, SE REPETIRAN ESTAS LINEAS LAS VECES QUE ITEMS HAYA EN LA LISTA DE COMICS-->
+                            <th scope="row">{{comic.id}}</th>
+                            <td>{{comic.nombre | uppercase }}</td> <!-- Esas lineas verticales se conocen como pipes o pipeline de Angular,  convierte el nombre del comic en mayusucla-->
+                            <td>{{comic.tematicaEnum | lowercase }}</td> <!-- Pipeline: convierte la tematicaEnum del comic en minusculas-->
+                            <td>{{comic.precio | number: '.2'}}</td> <!-- Pipeline: agregar o trabajar ese numero con 2 decimales-->
+                            <td>{{comic.color ? 'Si' : 'No' }}</td> <!--Mediante interpolacion usamos una operacion terniaria para imprimir si o no de acuerdo a un booleano-->
+                            <td>
+                                <i class="fas fa-search 2x ml-1" title="Consultar" (click)="imprimirInfoComic(i)" title="Consultar"></i>
+                                <i class="fas fa-pencil-alt 2x ml-1"  title="Editar"></i>
+                                <i class="far fa-times-circle 2x ml-1" title="Eliminar"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div *ngIf="mostrarItem" class="alert alert-info" role="alert">
+            ITEM SELECCIONADO: <pre>{{ comicDTOInfo | json }}</pre> 
+            <button type="button" class="btn btn-primary" (click)="cerrar()">Cerrar</button>      
+        </div>
+
+    </form>
+</div>

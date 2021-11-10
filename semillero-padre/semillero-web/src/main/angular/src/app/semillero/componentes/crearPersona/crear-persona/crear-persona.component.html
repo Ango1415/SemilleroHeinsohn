@@ -1,0 +1,16 @@
+<p>crear-persona works!</p>
+
+<!-- ---------------EJEMPLOS DE DATA BINDING----------------- -->
+
+<!--Interpolación-->
+<p>{{ "NOMBRE INSTRUCTOR" + nombreInstructor }}</p> <!--Busca el atributo nombreInstructor del ts del componente-->
+
+<!--Property Binding-->
+<img [src]="urlImagen" height="500" width="1000" > <!--Busca el atributo urlImage del ts del componente-->
+
+<!--Event Binding-->
+<br>
+<button (click)="simularCrearComic()" class="btn btn-primary">Simular Crear Comic</button> <!--En el evento (click) sobre el boton ejecuta el método simularCrearComic() -->
+
+<!--Two-Way Binding-->
+<input type="text" class="form-control-plaintext" id="staticEmail" [(ngModel)]="urlImagen" name="urlImagen"> <!--Va a mostrarme una imagen y yo puedo hacerla dinámica, uso el ngModel para establecer esa comunicación bidireccional, desde el front podemos cambiar la url-->

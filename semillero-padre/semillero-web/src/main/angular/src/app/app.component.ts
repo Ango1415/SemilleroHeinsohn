@@ -1,3 +1,6 @@
+/**
+ * Contiene el inicio de nuestra aplicación, es el mismo app route que hay en index.html
+ */
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,7 +16,7 @@ export class AppComponent {
   }  
 
   ngOnInit(): void {
-    this.router.navigate(['bienvenida']);    
+    this.router.navigate(['bienvenida']); // En primera instancia, navegará al componente bienvenida, es ña imagen del niño
     
   }
 }

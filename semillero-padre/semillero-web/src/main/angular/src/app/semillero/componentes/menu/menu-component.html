@@ -1,3 +1,4 @@
+<!--Contiene todo lo de la pag inicial que se despliega en localhost, este html es llamado desde el index para poder usar su lógica allá-->
 <body class="is-preload">
 
     <!-- Wrapper -->
@@ -9,7 +10,7 @@
 
                 <!-- Header -->
                 <header id="header">
-                    <a class="logo"><strong>Bienvenidos</strong> semillero 2019 Heinsohn</a>
+                    <a class="logo"><strong>Bienvenidos:</strong> Semillero Heinsohn BT 2021</a>
                     <ul class="icons">
                         <li><a href="https://twitter.com/HeinsohnSabe" class="icon brands fa-twitter"><span
                                     class="label">Twitter</span></a></li>
@@ -20,7 +21,7 @@
                     </ul>
                 </header>
                 <section style="padding: 1em 0 3em 0;">
-                    <router-outlet></router-outlet>
+                    <router-outlet></router-outlet> <!--Esta etiqueta router-outlet es super importante, permitirá desplegar y ver x componente cuando nosotros estemos navegando, pues permite navegar entre vistas de acuerdo a los componentes-->
                 </section>
             </div>
         </div>
@@ -41,7 +42,7 @@
                     <header class="major">
                         <h2>Menu</h2>
                     </header>
-                    <ul>
+                    <ul> <!--Uso estos llamamientos a métodos para navegar entre menus-->
                         <li><a (click)="navegarHome()">Home</a></li>
                         <li><a (click)="navegarGestionarComic()">Gestionar Comic</a></li>
                         <li><a (click)="navegarGestionarCompra()">Gestionar compra comic</a></li>

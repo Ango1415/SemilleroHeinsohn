@@ -10,30 +10,38 @@ import { BienvenidaComponent } from './semillero/componentes/home/bienvenida-com
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './semillero/componentes/menu/menu-component';
+import { CrearPersonaComponent } from './semillero/componentes/crearPersona/crear-persona/crear-persona.component';
+import { GestionarComicComponent } from './semillero/componentes/gestionarComic/gestionar-comic/gestionar-comic.component';
 //import { GestionarComicComponent } from './semillero/componentes/gestionarComic/gestionar-comic';
 
 // DTOs
 //export { ComicDTO } from './semillero/dto/comic.dto';
 //export { ResultadoDTO } from './semillero/dto/resultado.dto';
 
+/**
+ * Aquí agregaremos todos los componentes nuevos que yo vaya creando para poder visualizarlos y  usarlos
+ * Debo importarlo y luego agragarlo acá abajo en declarations
+ */
 @NgModule({
-  declarations: [
-    AppComponent,
+  declarations: [ //COMPONENTES QUE VAYAMOS CREANDO
+    AppComponent, //Siempre viene creado, es el componente clave para que todo funcione
     MenuComponent,
     BienvenidaComponent,
+    CrearPersonaComponent,
+    GestionarComicComponent, //Puede estar o no la ultima coma, se deja por buena practica en seña de que puede importarse otros componentes
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
+  imports: [ //FUNCIONALIDADES DE ANGULAR
+    BrowserModule, //Manejar diferentes modulos
+    AppRoutingModule, //Gestiona los direccionamientos
     HttpModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    HttpClientModule, //Sirve para todo lo relacionado con servicios
+    FormsModule, //Relacionado con formularios reactivos, realizar validaciones
+    ReactiveFormsModule //Trabaja con FormsModule
   ],
   providers: [
-  	{ provide: APP_BASE_HREF, useValue: '/SemilleroHBT' }
+  	{ provide: APP_BASE_HREF, useValue: '/SemilleroHBT' } //Raíz de nuestro proyecto y la agrega a la URL /SemilleroHBT
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] //Define el componente inicial y principal, llamado AppComponent, el cual es el mismo app route que estaba el el index.html y que tiene nuestro inicio de aplicación
 })
 export class AppModule { 
 

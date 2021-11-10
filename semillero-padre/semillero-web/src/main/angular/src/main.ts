@@ -8,5 +8,5 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic().bootstrapModule(AppModule) //Invoca al AppModule, archivo importante donde declaramos todos nuestros nuevos componentes y algunas dependencias
   .catch(err => console.error(err));

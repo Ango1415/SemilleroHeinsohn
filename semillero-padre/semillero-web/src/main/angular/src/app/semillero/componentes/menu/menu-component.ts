@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
  * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
  */
 @Component({
-  selector: 'home-page',
+  selector: 'home-page', //Es raro que se llame diferente de menu
   templateUrl: './menu-component.html',
 })
 export class MenuComponent implements OnInit {
@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
    * Constructor de la clase
    * @param router permite direccionar a otros componentes
    */
-  constructor(private router: Router) {
+  constructor(private router: Router) { //Inyectamos el router para poder acceder a los métodos y utilizar uno que se llama navigate, este me permite activar la acción de ir a otra vista
 
   }
 
@@ -32,7 +32,7 @@ export class MenuComponent implements OnInit {
    * @description Metodo encargado de direccionar al componente de gestionar comic
    * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
    */
-  public navegarGestionarComic(): void {
+  public navegarGestionarComic(): void { //Me permite realizar la navegación entre componentes
     this.router.navigate(['gestionar-comic']);
   }
 
