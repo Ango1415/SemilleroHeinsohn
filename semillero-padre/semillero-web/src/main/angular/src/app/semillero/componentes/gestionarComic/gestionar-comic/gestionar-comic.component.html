@@ -1,4 +1,4 @@
-<div class="container">  <!--Emcierra una seccion de componentes html-->
+<div class="container">  <!--Encierra una seccion de componentes html-->
     <pre>{{ comicDTO | json }}</pre> <!--Genera un JSON, comicDTO debe ser una var en el .ts, imprimo todo lo que diligencío en mi formulario, para ver si todo está funcionando bien -->
     <form>
         <h1>Gestionar Comic</h1>  <!-- forma de hacerlo con interpolación <h1>Gestionar Comic</h1>, así no dejaríamos el código estático-->
@@ -113,6 +113,7 @@
                                 <i class="fas fa-search 2x ml-1" title="Consultar" (click)="imprimirInfoComic(i)" title="Consultar"></i>
                                 <i class="fas fa-pencil-alt 2x ml-1"  title="Editar"></i>
                                 <i class="far fa-times-circle 2x ml-1" title="Eliminar"></i>
+                                <i class="fas fa-dollar-sign 2x ml-1" title="Comprar" (click)="navegarGestionarCompra(i)"></i>
                             </td>
                         </tr>
                     </tbody>

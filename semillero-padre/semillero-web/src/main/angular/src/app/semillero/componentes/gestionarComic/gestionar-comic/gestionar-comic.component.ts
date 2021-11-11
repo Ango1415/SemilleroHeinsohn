@@ -1,5 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ComicDTO } from 'src/app/semillero/dto/comic-dto';
 
 /**
@@ -18,7 +19,7 @@ export class GestionarComicComponent implements OnInit {
   public listaComics : Array<ComicDTO>;
   public mostrarItem : boolean;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.comicDTO = new ComicDTO(); //Una vez definido esto ya podemos usar el ngModel en nuestro .html
@@ -52,5 +53,10 @@ export class GestionarComicComponent implements OnInit {
 
   public cerrar() : void {
     this.mostrarItem = false;
+  }
+
+  public navegarGestionarCompra(posicion : number): void {
+    this.comicDTOInfo = this.listaComics[posicion];
+    this.router.navigate(['gestionar-compra-comic']);
   }
 }

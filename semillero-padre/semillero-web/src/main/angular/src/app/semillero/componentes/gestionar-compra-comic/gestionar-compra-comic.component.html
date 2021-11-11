@@ -1,0 +1,30 @@
+<div class="container">
+    <pre>{{ comicDTO | json }}</pre>
+    <form>
+        <h1>Gestionar Compra Comic</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-6">
+                <label for="nombreComic">Nombre Comic : {{nombre}}</label>
+            </div>
+            <div class="col-6">
+                <label for="cantidadCompraComic">Cantidad a comprar</label>
+                <input type="text" class="form-control" id="cantidadCompraComic" name="editorial" [(ngModel)]="comicDTO.editorial">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <span></span>
+            </div>
+            <div class="col-3 text-right">
+                <button type="button" class="btn btn-primary">Comprar</button>
+            </div>
+            <div class="col-3 text-right">
+                <button type="button" class="btn btn-primary">Cancelar</button>
+            </div>
+        </div>
+
+    </form>
+</div>
